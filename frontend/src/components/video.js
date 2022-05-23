@@ -50,8 +50,8 @@ export default function Video() {
                             />
                         </div>
                         <div className="flex justify-between">
-                            <div className="w-36 bg-main shadow-md rounded-full px-4 py-2">
-                                <p className="text-2xl text-dark">
+                            <div className="w-auto bg-main shadow-md rounded-full px-4 py-2">
+                                <p className="text-xl text-dark">
                                     {video.slug}
                                 </p>
                             </div>
