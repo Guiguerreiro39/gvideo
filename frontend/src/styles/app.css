@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+html, body {
+  @apply overflow-x-hidden w-full h-screen text-dark;
+}
+html, body {
+  width: 100vw;
+  scroll-behavior: smooth;
+  font-family: 'Roboto', sans-serif;
+}
+
+.filter-icon {
+  filter: invert(95%) sepia(9%) saturate(61%) hue-rotate(21deg) brightness(91%) contrast(87%);
+}
+button:hover .filter-icon {
+  filter: invert(80%) sepia(80%) saturate(2253%) hue-rotate(336deg) brightness(103%) contrast(101%);
+}
