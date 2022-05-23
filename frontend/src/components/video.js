@@ -35,9 +35,9 @@ export default function Video() {
     }, []);
 
     return (
-        <>
+        <div className="flex flex-col justify-between items-center">
             {video && (
-                <div className="my-10 grid grid-cols-2 gap-6">
+                <div className="my-10 lg:grid lg:grid-cols-2 lg:gap-6 space-y-10 lg:space-y-0">
                     <div className="space-y-5">
                         <div
                             className="overflow-hidden rounded-2xl shadow-md bg-light-dark"
@@ -69,7 +69,7 @@ export default function Video() {
                         </div>
                     </div>
                     <div
-                        className="text-left space-y-5 overflow-auto"
+                        className="text-left space-y-5 overflow-auto grid-cols-1"
                         style={{
                             maxHeight: videoRef.current
                                 ? videoRef.current.height
@@ -85,7 +85,7 @@ export default function Video() {
             )}
             <Link
                 to="/"
-                className="absolute w-32 bottom-0 left-0 right-0 mx-auto my-5 text-center text-light-dark border-1.5 border-light-dark rounded-full px-6 py-2 hover:border-2 hover:font-medium hover:border-main hover:text-main hover:scale-110 duration-300 transform"
+                className="my-5 text-center text-light-dark border-1.5 border-light-dark rounded-full px-6 py-2 hover:border-2 hover:font-medium hover:border-main hover:text-main hover:scale-110 duration-300 transform"
             >
                 Go Back
             </Link>
@@ -96,6 +96,6 @@ export default function Video() {
                     setVideo={setVideo}
                 />
             )}
-        </>
+        </div>
     );
 }

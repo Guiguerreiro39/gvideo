@@ -33,10 +33,10 @@ export default function Modal({ close, video = {}, setVideo = () => {} }) {
             <form
                 onSubmit={submit}
                 encType="multipart/form-data"
-                className="absolute text-center m-auto inset-0 w-1/2 h-3/4 z-20 bg-white shadown-md rounded-lg px-8 py-8"
+                className="absolute text-center m-auto inset-0 w-3/4 md:w-2/3 2xl:h-4/5 h-5/6 z-20 bg-white shadown-md rounded-lg p-6 md:p-8"
             >
-                <div className="border-b-1.5 border-light-dark pb-5 mb-5 flex justify-between">
-                    <h3 className="text-4xl">{Object.keys(video).length > 0 ? "Edit" : "Create"} Video</h3>
+                <div className="border-b-1.5 border-light-dark pb-3 mb-3 lg:pb-5 lg:mb-5 flex justify-between">
+                    <h3 className="text-3xl lg:text-4xl">{Object.keys(video).length > 0 ? "Edit" : "Create"} Video</h3>
                     <button onClick={() => close()}className="focus:outline-none rounded-full h-10 w-10 border-1.5 border-light-dark hover:border-2 hover:border-main flex justify-center items-center">
                         <img
                             src={closeIcon}
@@ -47,7 +47,7 @@ export default function Modal({ close, video = {}, setVideo = () => {} }) {
                 </div>
                 <div className="space-y-4">
                     <div className="flex items-center space-x-4">
-                        <p className="text-xl text-left w-32">Title</p>
+                        <p className="md:text-xl text-lg text-left w-32 truncate">Title</p>
                         <input
                             type="text"
                             name="title"
@@ -58,7 +58,7 @@ export default function Modal({ close, video = {}, setVideo = () => {} }) {
                         />
                     </div>
                     <div className="flex items-center space-x-4">
-                        <p className="text-xl text-left w-32">Description</p>
+                        <p className="md:text-xl text-lg text-left w-32 truncate">Description</p>
                         <textarea
                             name="description"
                             rows="3"
@@ -70,7 +70,7 @@ export default function Modal({ close, video = {}, setVideo = () => {} }) {
                         />
                     </div>
                     <div className="flex items-center space-x-4">
-                        <p className="text-xl text-left w-32">URL</p>
+                        <p className="md:text-xl text-lg text-left w-32 truncate">URL</p>
                         <input
                             type="text"
                             name="url"
@@ -80,7 +80,7 @@ export default function Modal({ close, video = {}, setVideo = () => {} }) {
                         />
                     </div>
                     <div className="flex items-center space-x-4">
-                        <p className="text-xl text-left w-32">Thumbnail</p>
+                        <p className="md:text-xl text-lg text-left w-32 truncate">Thumbnail</p>
                         <input
                             type="text"
                             name="thumbnail"
@@ -90,7 +90,7 @@ export default function Modal({ close, video = {}, setVideo = () => {} }) {
                         />
                     </div>
                     <div className="flex items-center space-x-4">
-                        <p className="text-xl text-left w-32">Slug</p>
+                        <p className="md:text-xl text-lg text-left w-32 truncate">Slug</p>
                         <input
                             type="text"
                             name="slug"
