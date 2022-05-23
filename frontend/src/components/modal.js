@@ -1,19 +1,26 @@
-import React, { useState } from "react";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
-import { patchVideo } from "../requests/videos";
+import { patchVideo, postVideo } from "../requests/videos";
 
 import circles from "../svg/circles.svg";
 import closeIcon from "../svg/close.svg";
 
-export default function Modal({ close, video, setVideo }) {
+export default function Modal({ close, video = {}, setVideo = () => {} }) {
+    const navigate = useNavigate();
+
     async function submit(e) {
         e.preventDefault();
 
         const formData = new FormData(e.target);
 
         try {
-            const res = await patchVideo(video._id, formData);
+            let res;
+            if (Object.keys(video).length > 0) res = await patchVideo(video._id, formData);
+            else res = await postVideo(formData)
+
             setVideo(res);
+            navigate(`/videos/${res._id}`);
         } catch (err) {
             console.error(err);
         } finally {
@@ -29,7 +36,7 @@ export default function Modal({ close, video, setVideo }) {
                 className="absolute text-center m-auto inset-0 w-1/2 h-3/4 z-20 bg-white shadown-md rounded-lg px-8 py-8"
             >
                 <div className="border-b-1.5 border-light-dark pb-5 mb-5 flex justify-between">
-                    <h3 className="text-4xl">Edit Video</h3>
+                    <h3 className="text-4xl">{Object.keys(video).length > 0 ? "Edit" : "Create"} Video</h3>
                     <button onClick={() => close()}className="focus:outline-none rounded-full h-10 w-10 border-1.5 border-light-dark hover:border-2 hover:border-main flex justify-center items-center">
                         <img
                             src={closeIcon}
@@ -44,8 +51,9 @@ export default function Modal({ close, video, setVideo }) {
                         <input
                             type="text"
                             name="title"
+                            maxLength={40}
                             placeholder="Video title..."
-                            defaultValue={video.title}
+                            defaultValue={Object.keys(video).length > 0 ? video.title : ""}
                             className="border-1.5 focus:border-main focus:border-2 focus:outline-none border-light-dark h-10 w-full rounded-full p-4 flex items-center justify-between"
                         />
                     </div>
@@ -56,7 +64,7 @@ export default function Modal({ close, video, setVideo }) {
                             rows="3"
                             maxLength={200}
                             placeholder="Video description..."
-                            defaultValue={video.description}
+                            defaultValue={Object.keys(video).length > 0 ? video.description : ""}
                             style={{ resize: "none" }}
                             className="border-1.5 focus:border-main focus:border-2 focus:outline-none border-light-dark w-full rounded-3xl p-4 flex items-center justify-between"
                         />
@@ -67,7 +75,7 @@ export default function Modal({ close, video, setVideo }) {
                             type="text"
                             name="url"
                             placeholder="Video url..."
-                            defaultValue={video.url}
+                            defaultValue={Object.keys(video).length > 0 ? video.url : ""}
                             className="border-1.5 focus:border-main focus:border-2 focus:outline-none border-light-dark h-10 w-full rounded-full p-4 flex items-center justify-between"
                         />
                     </div>
@@ -77,7 +85,7 @@ export default function Modal({ close, video, setVideo }) {
                             type="text"
                             name="thumbnail"
                             placeholder="Video thumbnail..."
-                            defaultValue={video.thumbnail}
+                            defaultValue={Object.keys(video).length > 0 ? video.thumbnail : ""}
                             className="border-1.5 focus:border-main focus:border-2 focus:outline-none border-light-dark h-10 w-full rounded-full p-4 flex items-center justify-between"
                         />
                     </div>
@@ -86,8 +94,9 @@ export default function Modal({ close, video, setVideo }) {
                         <input
                             type="text"
                             name="slug"
+                            maxLength={20}
                             placeholder="Video slug..."
-                            defaultValue={video.slug}
+                            defaultValue={Object.keys(video).length > 0 ? video.slug : ""}
                             className="border-1.5 focus:border-main focus:border-2 focus:outline-none border-light-dark h-10 w-full rounded-full p-4 flex items-center justify-between"
                         />
                     </div>
