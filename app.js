@@ -10,8 +10,7 @@ require("dotenv").config();
 // Configuring port
 const port = process.env.PORT || 9000;
 
-// MongoDB
-require("./db/mongo.js")();
+setTimeout(require("./db/mongo.js")(), 3000);
 
 // Start express
 const app = express();
