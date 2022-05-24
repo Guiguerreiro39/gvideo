@@ -46,8 +46,8 @@ export default function Modal({ close, video = {}, setVideo = () => {} }) {
                     </button>
                 </div>
                 <div className="space-y-4">
-                    <div className="flex items-center space-x-4">
-                        <p className="md:text-xl text-lg text-left w-32 truncate">Title</p>
+                    <div className="flex items-center md:space-x-4">
+                        <p className="text-lg text-left w-32 truncate hidden md:block">Title</p>
                         <input
                             type="text"
                             name="title"
@@ -57,8 +57,8 @@ export default function Modal({ close, video = {}, setVideo = () => {} }) {
                             className="border-1.5 focus:border-main focus:border-2 focus:outline-none border-light-dark h-10 w-full rounded-full p-4 flex items-center justify-between"
                         />
                     </div>
-                    <div className="flex items-center space-x-4">
-                        <p className="md:text-xl text-lg text-left w-32 truncate">Description</p>
+                    <div className="flex items-center md:space-x-4">
+                        <p className="text-lg text-left w-32 truncate hidden md:block">Description</p>
                         <textarea
                             name="description"
                             rows="3"
@@ -69,8 +69,8 @@ export default function Modal({ close, video = {}, setVideo = () => {} }) {
                             className="border-1.5 focus:border-main focus:border-2 focus:outline-none border-light-dark w-full rounded-3xl p-4 flex items-center justify-between"
                         />
                     </div>
-                    <div className="flex items-center space-x-4">
-                        <p className="md:text-xl text-lg text-left w-32 truncate">URL</p>
+                    <div className="flex items-center md:space-x-4">
+                        <p className="text-lg text-left w-32 truncate hidden md:block">URL</p>
                         <input
                             type="text"
                             name="url"
@@ -79,8 +79,8 @@ export default function Modal({ close, video = {}, setVideo = () => {} }) {
                             className="border-1.5 focus:border-main focus:border-2 focus:outline-none border-light-dark h-10 w-full rounded-full p-4 flex items-center justify-between"
                         />
                     </div>
-                    <div className="flex items-center space-x-4">
-                        <p className="md:text-xl text-lg text-left w-32 truncate">Thumbnail</p>
+                    <div className="flex items-center md:space-x-4">
+                        <p className="text-lg text-left w-32 truncate hidden md:block">Thumbnail</p>
                         <input
                             type="text"
                             name="thumbnail"
@@ -89,8 +89,8 @@ export default function Modal({ close, video = {}, setVideo = () => {} }) {
                             className="border-1.5 focus:border-main focus:border-2 focus:outline-none border-light-dark h-10 w-full rounded-full p-4 flex items-center justify-between"
                         />
                     </div>
-                    <div className="flex items-center space-x-4">
-                        <p className="md:text-xl text-lg text-left w-32 truncate">Slug</p>
+                    <div className="flex items-center md:space-x-4">
+                        <p className="text-lg text-left w-32 truncate hidden md:block">Slug</p>
                         <input
                             type="text"
                             name="slug"
