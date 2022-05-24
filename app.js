@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const path = require('path')
 
 // parse env variables
-require("dotenv")?.config();
+if (process.env.NODE_ENV != "production") require("dotenv")?.config();
 
 // Configuring port
 const port = process.env.PORT || 9000;
