@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import { getAllVideos } from "../requests/videos";
 
 export default function ListVideos() {
+    const location = useLocation()
+
     const [videos, setVideos] = useState([]);
+    const [search, setSearch] = useState("")
 
     async function fetch() {
         try {
@@ -19,10 +22,17 @@ export default function ListVideos() {
         fetch();
     }, []);
 
+    useEffect(() => {
+        const queryParams = new URLSearchParams(location.search)
+        const querySearch = queryParams.get("search") ? queryParams.get("search") : ""
+
+        setSearch(querySearch.toLowerCase())
+    }, [location])
+
     return (
         <>
             <div className="my-10 grid grid-cols-1 gap-y-6 lg:grid-cols-3 md:gap-6 md:grid-cols-2">
-                {videos && videos.map((v) => (
+                {videos && videos.filter((v) => v.title.toLowerCase().includes(search)).map((v) => (
                     <Link
                         className="h-64 bg-cover bg-center overflow-hidden rounded-2xl shadow-md flex items-end bg-light-dark"
                         style={{ backgroundImage: `url(${v.thumbnail})` }}
