@@ -37,7 +37,7 @@ export default function Video() {
     return (
         <div className="flex flex-col justify-between items-center">
             {video && (
-                <div className="my-10 lg:grid lg:grid-cols-2 lg:gap-6 space-y-10 lg:space-y-0">
+                <div className="my-10 lg:grid lg:grid-cols-2 lg:gap-6 space-y-10 lg:space-y-0 w-full">
                     <div className="space-y-5">
                         <div
                             className="overflow-hidden rounded-2xl shadow-md bg-light-dark"
