@@ -1,5 +1,7 @@
 # Gvideo - Video Gallery
 
+![logo](https://user-images.githubusercontent.com/11543544/169926753-0c02f9c3-b838-4a8c-84fe-45f6e3fefb2d.png)
+
 This small project was suggested by tl;dv to assess the knowledge and Full-Stack skills of the interviewees. The objective is to create a video gallery with NodeJS as the back-end, ReactJS as the front-end and MongoDB for the database.
 
 ## Requirements
