@@ -4,8 +4,8 @@ const init = () => {
     let conn = mongoose.connection;
     
     let url
-    if (process.env.NODE_ENV == "develop") url = process.env.DB_URL
-    if (process.env.NODE_ENV == "test") url = process.env.DB_TEST_URL
+    if (process.env.NODE_ENV_STATUS == "develop") url = process.env.DB_URL
+    if (process.env.NODE_ENV_STATUS == "test") url = process.env.DB_TEST_URL
 
     mongoose
         .connect(url, {

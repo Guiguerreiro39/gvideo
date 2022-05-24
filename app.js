@@ -10,7 +10,8 @@ require("dotenv").config();
 // Configuring port
 const port = process.env.PORT || 9000;
 
-setTimeout(() => require("./db/mongo.js")(), 3000);
+// MongoDB
+require("./db/mongo.js")();
 
 // Start express
 const app = express();
@@ -31,7 +32,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/api", require("./routes/api"));
 
 // Serve static assets if in production
-if (process.env.NODE_ENV == "production") {
+if (process.env.NODE_ENV_STATUS == "production") {
     // Set static folder
     app.use(express.static('client/build'))
 
