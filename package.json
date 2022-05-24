@@ -28,5 +28,8 @@
     "mockgoose": "^8.0.4",
     "nodemon": "^2.0.16",
     "supertest": "^6.2.3"
+  },
+  "engines": {
+    "node": "v14.15.1"
   }
 }
