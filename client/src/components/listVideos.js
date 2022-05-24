@@ -22,7 +22,7 @@ export default function ListVideos() {
     return (
         <>
             <div className="my-10 grid grid-cols-1 gap-y-6 lg:grid-cols-3 md:gap-6 md:grid-cols-2">
-                {videos.map((v) => (
+                {videos && videos.map((v) => (
                     <Link
                         className="h-64 bg-cover bg-center overflow-hidden rounded-2xl shadow-md flex items-end bg-light-dark"
                         style={{ backgroundImage: `url(${v.thumbnail})` }}
