@@ -2,6 +2,7 @@
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const path = require('path')
 
 // parse env variables
 require("dotenv").config();
@@ -30,8 +31,19 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Defining route middleware
 app.use("/api", require("./routes/api"));
 
+// Serve static assets if in production
+if (process.env.NODE_ENV == "production") {
+    // Set static folder
+    app.use(express.static('client/build'))
+
+    // Any request that isn't /api will send the static file
+    app.get('*', (_, res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+    })
+}
+
 // Listening to port
 app.listen(port);
-console.log(`Listening on http://localhost:${port}/api`);
+console.log(`Listening on :${port}/api`);
 
 module.exports = app

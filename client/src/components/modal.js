@@ -105,6 +105,7 @@ export default function Modal({ close, video = {}, setVideo = () => {} }) {
                     </button>
                     <img
                         src={circles}
+                        alt=""
                         className="absolute bottom-0 right-0 h-1/3 -z-10 opacity-50"
                     />
                 </div>
