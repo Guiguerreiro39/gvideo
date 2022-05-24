@@ -28,7 +28,7 @@ export default function Navbar() {
                         className="border-1.5 focus:border-main focus:border-2 focus:outline-none border-light-dark h-10 lg:w-72 sm:w-52 w-40 rounded-full p-4 hidden sm:flex items-center justify-between"
                         placeholder="Search"
                         onKeyUp={(e) => {
-                            if (e.target.value.length == 0) navigate("/")
+                            if (e.target.value.length === 0) navigate("/")
                             else navigate(`/?search=${e.target.value}`);
                         }}
                     />
