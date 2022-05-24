@@ -4,6 +4,9 @@
 
 This small project was suggested by tl;dv to assess the knowledge and Full-Stack skills of the interviewees. The objective is to create a video gallery with NodeJS as the back-end, ReactJS as the front-end and MongoDB for the database.
 
+## Demo
+You can find the demo of my web application in the following link: https://gvideo-tldv-app.herokuapp.com/. It is linked to the **bonus-frontend** branch which contains additional features and is more stable for production.
+
 ## Requirements
 - `react-scripts`
 - `node` >= v14.0.0
@@ -27,6 +30,7 @@ I've completed all the main features requested for this project. There are also 
 - [x] Create a new page to create a new video entry.
 - [x] Appealing UI design.
 - [x] Responsive design.
+- [x] Search feature. 
 
 ## Design
 I've decided to create the design of the Web application using Figma to guide me when developing the front-end. 
@@ -46,6 +50,8 @@ The back-end is a REST API made in NodeJS/Express and uses the `mongoose` module
 2. Make sure your **MongoDB** server is running. If not, run the command `mongod --dbpath C:\<PATH_TO_MONGODB_FOLDER>\data\`.
 3. Change any necessary data in the **sample.env** file (for instance the `DB_URL` to the correct port of your **MongoDB** server) and rename it to **.env**.
 4. Simply run the back-end by using the command `npm run dev`.
+
+If you don't have any **MongoDB** server running you can simply use my test server: mongodb+srv://test:test@cluster0.ppav7.mongodb.net/?retryWrites=true&w=majority
 
 ![image](https://user-images.githubusercontent.com/11543544/169924826-c18c8cac-0a9f-42f8-ac11-5ea00ebf3460.png)
 
