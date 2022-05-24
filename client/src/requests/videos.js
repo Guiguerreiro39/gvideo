@@ -1,8 +1,10 @@
 import axios from "axios"
 
+const API_URL = process.env.REACT_APP_API_URL ? process.env.REACT_APP_API_URL : `${window.location.hostname}/api`
+
 export function getAllVideos() {
     return new Promise((resolve, reject) => {
-        axios.get(`${process.env.REACT_APP_API_URL}/videos`)
+        axios.get(`${API_URL}/videos`)
              .then((res) => {
                  resolve(res.data.payload)
              })
@@ -14,7 +16,7 @@ export function getAllVideos() {
 
 export function getVideo(uuid) {
     return new Promise((resolve, reject) => {
-        axios.get(`${process.env.REACT_APP_API_URL}/videos/${uuid}`)
+        axios.get(`${API_URL}/videos/${uuid}`)
              .then((res) => {
                  resolve(res.data.payload)
              })
@@ -26,7 +28,7 @@ export function getVideo(uuid) {
 
 export function postVideo(payload) {
     return new Promise((resolve, reject) => {
-        axios.post(`${process.env.REACT_APP_API_URL}/videos`, payload)
+        axios.post(`${API_URL}/videos`, payload)
              .then((res) => {
                  resolve(res.data.payload)
              })
@@ -38,7 +40,7 @@ export function postVideo(payload) {
 
 export function patchVideo(id, payload) {
     return new Promise((resolve, reject) => {
-        axios.patch(`${process.env.REACT_APP_API_URL}/videos/${id}`, payload)
+        axios.patch(`${API_URL}/videos/${id}`, payload)
              .then((res) => {
                  resolve(res.data.payload)
              })

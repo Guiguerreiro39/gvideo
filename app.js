@@ -44,6 +44,6 @@ if (process.env.NODE_ENV == "production") {
 
 // Listening to port
 app.listen(port);
-console.log(`Listening on http://localhost:${port}/api`);
+console.log(`Listening on :${port}/api`);
 
 module.exports = app
