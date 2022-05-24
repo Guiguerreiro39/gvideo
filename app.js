@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const path = require('path')
 
 // parse env variables
-if (process.env.NODE_ENV_STATUS != "production") require("dotenv").config();
+require("dotenv").config();
 
 // Configuring port
 const port = process.env.PORT || 9000;
@@ -32,7 +32,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/api", require("./routes/api"));
 
 // Serve static assets if in production
-if (process.env.NODE_ENV_STATUS == "production") {
+if (process.env.NODE_ENV == "production") {
     // Set static folder
     app.use(express.static('client/build'))
 
