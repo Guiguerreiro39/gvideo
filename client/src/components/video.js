@@ -32,7 +32,8 @@ export default function Video() {
     useEffect(() => {
         if (location.state) setVideo(location.state.video);
         else fetch();
-    }, []);
+        // eslint-disable-next-line
+    }, [location]);
 
     return (
         <>
