@@ -7,6 +7,8 @@ const path = require('path')
 // parse env variables
 require("dotenv").config();
 
+console.log(process.env)
+
 // Configuring port
 const port = process.env.PORT || 9000;
 
