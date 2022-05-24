@@ -34,11 +34,11 @@ app.use("/api", require("./routes/api"));
 // Serve static assets if in production
 if (process.env.NODE_ENV == "production") {
     // Set static folder
-    app.use(express.static('../frontend/build'))
+    app.use(express.static('client/build'))
 
     // Any request that isn't /api will send the static file
     app.get('*', (_, res) => {
-        res.sendFile(path.resolve(__dirname, '..', 'frontend', 'build', 'index.html'))
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
     })
 }
 
