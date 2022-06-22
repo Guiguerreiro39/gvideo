@@ -7,7 +7,7 @@ import closeIcon from "../svg/close.svg";
 
 function Login({ close, onLogin, error }) {
     useEffect(() => {
-        console.error(error)
+        if(error) console.error(error)
     }, [error])
 
     async function submit(e) {
